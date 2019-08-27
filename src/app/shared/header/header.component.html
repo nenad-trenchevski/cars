@@ -1,0 +1,6 @@
+<div>
+    <ng-template *ngIf='navigationItems && navigationItems.length > 0'></ng-template>
+    <div *ngFor='let item of navigationItems'>
+        <p>{{ item.title }}</p>
+    </div>
+</div>
