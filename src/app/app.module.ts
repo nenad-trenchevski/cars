@@ -8,16 +8,19 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 import { AppComponent } from './app.component';
-import { LoadingComponent } from './shared/loading/loading.component';
+import { LoadingComponent } from './core/loading/loading.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavItemComponent } from './shared/header/nav-item/nav-item.component';
 import { LangItemComponent } from './shared/header/lang-item/lang-item.component';
 import { HomeComponent } from './public/home/home.component';
-import { CookieDesclaimerComponent } from './shared/cookie-desclaimer/cookie-desclaimer.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { MainComponent } from './shared/main/main.component';
 import { DataService } from './shared/data.service';
+import { CookieDisclaimerComponent } from './shared/cookie-disclaimer/cookie-disclaimer.component';
+import { ErrorComponent } from './core/error/error.component';
+import { ApiService } from './shared/api.service';
+import { AppConstants } from './app.constants';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -32,9 +35,10 @@ export function HttpLoaderFactory(http: HttpClient) {
         NavItemComponent,
         LangItemComponent,
         HomeComponent,
-        CookieDesclaimerComponent,
         NotFoundComponent,
-        MainComponent
+        MainComponent,
+        CookieDisclaimerComponent,
+        ErrorComponent
     ],
     imports: [
         BrowserModule,
@@ -49,9 +53,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         AppRoutingModule,
         BrowserAnimationsModule
     ],
-    providers: [
-        DataService
-    ],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

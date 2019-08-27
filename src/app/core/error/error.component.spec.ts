@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CookieDesclaimerComponent } from './cookie-desclaimer.component';
+import { ErrorComponent } from './error.component';
 
-describe('CookieDesclaimerComponent', () => {
-  let component: CookieDesclaimerComponent;
-  let fixture: ComponentFixture<CookieDesclaimerComponent>;
+describe('ErrorComponent', () => {
+  let component: ErrorComponent;
+  let fixture: ComponentFixture<ErrorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CookieDesclaimerComponent ]
+      declarations: [ ErrorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CookieDesclaimerComponent);
+    fixture = TestBed.createComponent(ErrorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,1 +1,3 @@
 <app-home></app-home>
+
+<app-cookie-disclaimer *ngIf='showAlert' (shouldShowAlert)='onCookieSent($event)'></app-cookie-disclaimer>

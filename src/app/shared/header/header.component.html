@@ -1,6 +1,21 @@
 <div>
-    <ng-template *ngIf='navigationItems && navigationItems.length > 0'></ng-template>
-    <div *ngFor='let item of navigationItems'>
-        <p>{{ item.title }}</p>
-    </div>
+    <!-- nav items-->
+    <ng-container *ngIf='navigationItems && navigationItems.length > 0; else emptyArray'>
+        <div *ngFor='let item of navigationItems'>
+            <app-nav-item [navItem]='item'></app-nav-item>
+        </div>
+    </ng-container>
+
+    <!-- switch language -->
+    <ng-container *ngIf='supportedLanguages && supportedLanguages.length > 0; else emptyArray'>
+        <div *ngFor='let lang of supportedLanguages'>
+            <app-lang-item [langItem]='lang'></app-lang-item>
+
+        </div>
+    </ng-container>
+
+    <!-- handle case where no items are being passed -->
+    <ng-template #emptyArray>
+        <app-error></app-error>
+    </ng-template>
 </div>
