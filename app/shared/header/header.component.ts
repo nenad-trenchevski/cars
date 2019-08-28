@@ -24,6 +24,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.getCurrentBrand();
     }
+    
+    setActiveItem(item: string, type: string): void {
+        this[type] = item;
+    }
+
+    toggleMenu(): void {
+        this.status = !this.status;
+    }
 
     private getCurrentBrand(): void {
         this.subscription = this.dataService.getCurrentCarBrand().subscribe((brand: string) => {
@@ -39,14 +47,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
         // Assuming that we're receiving a dynamic data and we don't know how many items will arrive...
         this.navigationItems = this.dataService.getItems('car');
         this.supportedLanguages = this.dataService.getItems('language');
-    }
-
-    setActiveItem(item: string, type: string): void {
-        this[type] = item;
-    }
-
-    toggleMenu(): void {
-        this.status = !this.status;
     }
 
     ngOnDestroy() {

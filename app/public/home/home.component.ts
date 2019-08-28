@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     // Initialize everything, get params, navigate if needed
     private initializeParams(): void {
         this.route$ = this.route.params.subscribe((params: Params) => {
-            
+
             const language = this.paramUtil(params, 'language');
             const carBrand = this.paramUtil(params, 'car');
             localStorage.setItem('lang', language);
