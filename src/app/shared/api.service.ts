@@ -14,8 +14,8 @@ export class ApiService {
     constructor(
         private readonly httpClient: HttpClient,
         private readonly apiConfig: ApiConfig,
-        private readonly appCst: AppConstants 
-        ) { }
+        private readonly appCst: AppConstants
+    ) { }
 
     // HTTPClient API method
     getIPAddress(): Observable<IPAdress> {

@@ -1,6 +1,8 @@
 <div class='cookie-disclaimer'>
     <ng-container *ngIf='ipAddress; else loading'>
-        <div class='ip-address-container'>{{'Your IP:' | translate}} {{ ipAddress }} <span (click)='setCookie()'>X</span> </div>
+        <div class='ip-address-container'>{{'Your IP:' | translate}} {{ ipAddress }}
+            <span (click)='setCookie()'>X</span>
+        </div>
         <div>{{'By using this site you agree to our cookie policy' | translate}}</div>
     </ng-container>
 

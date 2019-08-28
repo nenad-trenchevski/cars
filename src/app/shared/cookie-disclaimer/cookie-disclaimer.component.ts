@@ -9,8 +9,8 @@ import { IPAdress } from 'src/app/interface/ip-address.interface';
 })
 export class CookieDisclaimerComponent implements OnInit {
 
-    ipAddress: string;
     @Output() shouldShowAlert = new EventEmitter<boolean>();
+    ipAddress: string;
 
     constructor(private readonly apiService: ApiService) { }
 
@@ -19,18 +19,19 @@ export class CookieDisclaimerComponent implements OnInit {
     }
 
     // Send alert to the parent component
-    setCookie() {
+    setCookie(): void {
         localStorage.setItem('cookie', 'cookie');
         this.shouldShowAlert.emit(false);
     }
 
     // Api call
-    private getIpAddress() {
+    private getIpAddress(): void {
         this.apiService.getIPAddress().subscribe(
             (result: IPAdress) => {
                 this.ipAddress = result.ip;
             },
             error => {
+                // TODO: render error message somewhere on the screen...
                 console.log(error);
             }
         );

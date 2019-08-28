@@ -1,8 +1,8 @@
 <div class='content-wrapper'>
-        <main>
-            <app-header></app-header>
-            <app-main [selectedCar]='selectedCar'></app-main>
-            <app-cookie-disclaimer *ngIf='showAlert' (shouldShowAlert)='onCookieSent($event)'></app-cookie-disclaimer>
-            <app-footer></app-footer>
-        </main>
-    </div>
+    <main>
+        <app-header></app-header>
+        <app-main [selectedCar]='selectedCar'></app-main>
+        <app-cookie-disclaimer *ngIf='showAlert' (shouldShowAlert)='onCookieSent($event)'></app-cookie-disclaimer>
+        <app-footer></app-footer>
+    </main>
+</div>

@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
 })
 export class NotFoundComponent implements OnInit, OnDestroy {
 
-    counter = 3;
     private redirectInterval;
-  
+    counter = 3;
+    
     constructor(private readonly router: Router) { }
   
     ngOnInit() {

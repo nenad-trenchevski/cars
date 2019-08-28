@@ -19,7 +19,7 @@ export class DataService {
             title: 'bmw'
         },
         {
-            title: 'yugo'
+            title: 'zastava'
         },
         {
             title: 'audi'

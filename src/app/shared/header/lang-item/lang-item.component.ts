@@ -1,15 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Data } from 'src/app/interface/data.interface';
 
 @Component({
     selector: 'app-lang-item',
     templateUrl: './lang-item.component.html',
     styleUrls: ['./lang-item.component.scss']
 })
-export class LangItemComponent implements OnInit {
-    @Input() langItem;
-    constructor() { }
-
-    ngOnInit() {
-    }
-
+export class LangItemComponent {
+    @Input() langItem: Data;
 }

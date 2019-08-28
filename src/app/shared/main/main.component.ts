@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { fade } from '../animations/fade-animation';
 
 @Component({
@@ -7,13 +7,6 @@ import { fade } from '../animations/fade-animation';
     styleUrls: ['./main.component.scss'],
     animations: [fade]
 })
-export class MainComponent implements OnInit {
-
+export class MainComponent {
     @Input() selectedCar: string;
-
-    constructor() { }
-
-    ngOnInit() {
-    }
-
 }

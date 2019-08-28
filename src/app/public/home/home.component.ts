@@ -11,8 +11,8 @@ import { Subscription } from 'rxjs';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-    selectedCar: string;
     private route$: Subscription;
+    selectedCar: string;
 
     constructor(
         private readonly route: ActivatedRoute,
@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        // Clear
+        // Clear subscription
         if (this.route$) {
             this.route$.unsubscribe();
         }
