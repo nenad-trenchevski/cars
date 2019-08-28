@@ -1,16 +1,19 @@
-<div>
+<div class='navigation-container'>
     <!-- nav items-->
     <ng-container *ngIf='navigationItems && navigationItems.length > 0; else emptyArray'>
-        <div *ngFor='let item of navigationItems'>
-            <app-nav-item [navItem]='item'></app-nav-item>
+        <div class='menu-container'>
+            <div *ngFor='let item of navigationItems'>
+                <app-nav-item [navItem]='item'></app-nav-item>
+            </div>
         </div>
     </ng-container>
 
     <!-- switch language -->
     <ng-container *ngIf='supportedLanguages && supportedLanguages.length > 0; else emptyArray'>
-        <div *ngFor='let lang of supportedLanguages'>
-            <app-lang-item [langItem]='lang'></app-lang-item>
-
+        <div class='languages-container'>
+            <div *ngFor='let lang of supportedLanguages'>
+                <app-lang-item [langItem]='lang'></app-lang-item>
+            </div>
         </div>
     </ng-container>
 

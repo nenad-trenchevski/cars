@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { Navigation } from 'src/app/interface/nav.interface';
+import { Data } from 'src/app/interface/data.interface';
 
 @Component({
     selector: 'app-header',
@@ -11,13 +11,13 @@ export class HeaderComponent implements OnInit {
 
     constructor(private readonly dataService: DataService) { }
 
-    navigationItems: Navigation[] = [];
-    supportedLanguages: string[] = [];
+    navigationItems: Data[] = [];
+    supportedLanguages: Data[] = [];
 
     ngOnInit() {
         // Assume we're receiving a dynamic data and we don't know how many items will arrive...
-        this.navigationItems = this.dataService.getNavItems();
-        this.supportedLanguages = this.dataService.getSupportedLanguages();
+        this.navigationItems = this.dataService.getItems('car');
+        this.supportedLanguages = this.dataService.getItems('language');
     }
 
 }

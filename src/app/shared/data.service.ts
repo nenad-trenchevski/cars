@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Navigation } from '../interface/nav.interface';
+import { Data } from '../interface/data.interface';
 
 @Injectable({
     providedIn: 'root'
@@ -8,23 +8,34 @@ export class DataService {
 
     constructor() { }
 
-    private readonly navItems = [
+    private readonly car = [
         {
             title: 'Mercedes'
         },
         {
             title: 'BWM'
+        },
+        {
+            title: 'Yugo'
+        },
+        {
+            title: 'Audi'
+        },
+        {
+            title: 'Toyota'
         }
     ];
 
-    private readonly supportedLanguages = ['EN', 'DE'];
+    private readonly language = [
+        {
+            title: 'en'
+        },
+        {
+            title: 'de'
+        }
+    ];
 
-    getNavItems(): Navigation[] {
-        return this.navItems;
+    getItems(type: string): Data[] {
+        return this[type];
     }
-
-    getSupportedLanguages(): string[] {
-        return this.supportedLanguages;
-    }
-
 }

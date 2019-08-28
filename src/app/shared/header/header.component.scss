@@ -1,0 +1,13 @@
+.navigation-container {
+    color: white;
+
+    .menu-container {
+        display: flex;
+        justify-content: flex-start;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #FFCB49;
+        font-size: 15px;
+        padding: 20px 0;
+    }
+}
