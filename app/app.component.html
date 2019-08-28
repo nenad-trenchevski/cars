@@ -1,0 +1,3 @@
+<router-outlet></router-outlet>
+
+<app-cookie-disclaimer *ngIf='showAlert' (shouldShowAlert)='cookieSent($event)'></app-cookie-disclaimer>
