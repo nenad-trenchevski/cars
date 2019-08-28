@@ -1,24 +1,31 @@
 <div class='navigation-container'>
-    <!-- nav items-->
-    <ng-container *ngIf='navigationItems && navigationItems.length > 0; else emptyArray'>
-        <div class='menu-container'>
-            <div *ngFor='let item of navigationItems'>
-                <app-nav-item [navItem]='item'></app-nav-item>
+        <!-- nav items-->
+        <ng-container *ngIf='navigationItems && navigationItems.length > 0; else emptyArray'>
+            <div class='menu-container'>
+                <div *ngFor='let item of navigationItems'
+                 [routerLink]="['/cars', language, item.title]"
+                 (click)='setActiveItem(item.title, "selectedCar")'
+                 [class.active]="item.title === selectedCar"
+                 >
+                    <app-nav-item [navItem]='item'></app-nav-item>
+                </div>
             </div>
-        </div>
-    </ng-container>
-
-    <!-- switch language -->
-    <ng-container *ngIf='supportedLanguages && supportedLanguages.length > 0; else emptyArray'>
-        <div class='languages-container'>
-            <div *ngFor='let lang of supportedLanguages'>
-                <app-lang-item [langItem]='lang'></app-lang-item>
+        </ng-container>
+    
+        <!-- switch language -->
+        <ng-container *ngIf='supportedLanguages && supportedLanguages.length > 0; else emptyArray'>
+            <div class='languages-container'>
+                <div *ngFor='let lang of supportedLanguages'
+                (click)='setActiveItem(lang.title, "selectedLang")'
+                [routerLink]="['/cars', lang.title, carBrand]" 
+                [class.active]="lang.title === selectedLang">
+                    <app-lang-item [langItem]='lang'></app-lang-item>
+                </div>
             </div>
-        </div>
-    </ng-container>
-
-    <!-- handle case where no items are being passed -->
-    <ng-template #emptyArray>
-        <app-error></app-error>
-    </ng-template>
-</div>
+        </ng-container>
+    
+        <!-- handle case where no items are being passed -->
+        <ng-template #emptyArray>
+            <app-error></app-error>
+        </ng-template>
+    </div>

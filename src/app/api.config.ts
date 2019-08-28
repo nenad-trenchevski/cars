@@ -9,7 +9,7 @@ export class ApiConfig {
         IP_ADDRESS: 'https://api.ipify.org?format=json'
     }
 
-    // Use to get the endpoint 
+    // Use to get the endpoint
     getValue(key: string): string {
         return this.endpoints[key];
     };

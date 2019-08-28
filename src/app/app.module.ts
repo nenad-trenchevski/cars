@@ -16,11 +16,8 @@ import { LangItemComponent } from './shared/header/lang-item/lang-item.component
 import { HomeComponent } from './public/home/home.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { MainComponent } from './shared/main/main.component';
-import { DataService } from './shared/data.service';
 import { CookieDisclaimerComponent } from './shared/cookie-disclaimer/cookie-disclaimer.component';
 import { ErrorComponent } from './core/error/error.component';
-import { ApiService } from './shared/api.service';
-import { AppConstants } from './app.constants';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);

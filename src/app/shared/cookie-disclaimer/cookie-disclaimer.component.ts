@@ -15,20 +15,21 @@ export class CookieDisclaimerComponent implements OnInit {
     constructor(private readonly apiService: ApiService) { }
 
     ngOnInit() {
-        console.log('CookieDisclaimer initialised');
         this.getIpAddress();
     }
 
-
+    // Send alert to the parent component
     setCookie() {
         localStorage.setItem('cookie', 'cookie');
         this.shouldShowAlert.emit(false);
-      }
+    }
 
+    // Api call
     private getIpAddress() {
-        this.apiService.getIPAddress().subscribe((result: IPAdress) => {
-            this.ipAddress = result.ip;
-        },
+        this.apiService.getIPAddress().subscribe(
+            (result: IPAdress) => {
+                this.ipAddress = result.ip;
+            },
             error => {
                 console.log(error);
             }

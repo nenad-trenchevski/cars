@@ -1,16 +1,24 @@
+@import '../../../variables.scss';
+
 .main-heading-container {
-    color: white;
-    padding-top: 5%;
+    color: $white;
+    padding-top: 10%;
 
     h1 {
-        // background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(255, 118, 0, 0.84) 5%, rgb(255, 239, 0) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         padding-left: 5%;
-        text-transform: uppercase;
-        font-weight: 700;
+        text-transform: $uppercase;
+        font-weight: $bold;
         font-size: 33px;
-        text-shadow: 0 0 1px #a3e2ed, 0 0 5px #037ffc, 0 0 10px #037ffc, 0 0 30px #037ffc, 0 0 0px #a3e2ed, 0 0 0px #037ffc, 0 0 1px #037ffc, 0 0 0px #037ffc
+        text-shadow: 0 0 1px $blizzardBlue,
+                     0 0 5px $azureRadiance,
+                     0 0 10px $azureRadiance,
+                     0 0 30px $azureRadiance,
+                     0 0 0px $blizzardBlue,
+                     0 0 0px $azureRadiance,
+                     0 0 1px $azureRadiance,
+                     0 0 0px $azureRadiance;
     }
 
     p {
@@ -18,23 +26,17 @@
         // blinking animation
         animation: blink-animation 0.8s steps(5, start) infinite;
         -webkit-animation: blink-animation 1s steps(5, start) infinite;
-
-        &:hover {
-            animation: swipe 0.3s 1;
-        animation-delay: 0s;
-        animation-direction: linear;
-        }
     }
 }
 
 @keyframes blink-animation {
     to {
-        visibility: hidden;
+        visibility: $hiddenElement;
     }
 }
 
 @-webkit-keyframes blink-animation {
     to {
-        visibility: hidden;
+        visibility: $hiddenElement;
     }
 }

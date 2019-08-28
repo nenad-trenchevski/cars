@@ -17,6 +17,7 @@ export class ApiService {
         private readonly appCst: AppConstants 
         ) { }
 
+    // HTTPClient API method
     getIPAddress(): Observable<IPAdress> {
         return this.httpClient.get<IPAdress>(this.apiConfig.getValue(this.appCst.CONSTS.IP_ADDRESS));
     }

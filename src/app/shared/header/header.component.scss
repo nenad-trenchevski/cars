@@ -1,13 +1,36 @@
+@import '../../../variables.scss';
+
 .navigation-container {
-    color: white;
+    color: $white;
 
     .menu-container {
-        display: flex;
+        display: $flex;
         justify-content: flex-start;
-        text-transform: uppercase;
-        font-weight: 700;
-        color: #FFCB49;
+        text-transform: $uppercase;
+        font-weight: $bold;
+        color: $brightSun;
         font-size: 15px;
         padding: 20px 0;
     }
+
+    .languages-container {
+        display: $flex;
+        justify-content: flex-end;
+        position: $absolute;
+        top: 0;
+        right: 30px;
+        color: $brightSun;
+        cursor: pointer;
+
+        > div {
+            padding: 20px;
+        }
+    }
+}
+
+
+// move this class above
+.active {
+    background-color: white;
+    color: green;
 }

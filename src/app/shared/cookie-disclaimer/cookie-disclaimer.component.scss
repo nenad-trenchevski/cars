@@ -1,0 +1,27 @@
+@import '../../../variables.scss';
+
+.cookie-disclaimer {
+    position: $absolute;
+    bottom: 40px;
+    right: 35px;
+    color: $black;
+    background: $white;
+    padding: 20px 10px;
+    border-radius: 10px;
+    opacity: 0.8;
+    text-align: center;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    .ip-address-container {
+        display: $flex;
+        justify-content: $spaceBetween;
+
+        > span {
+            cursor: pointer;
+            color: $brightSun;
+        }
+    }
+}
